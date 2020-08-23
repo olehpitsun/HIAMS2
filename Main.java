@@ -42,7 +42,6 @@ public class Main {
     public static void main(String[] args) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
-        System.out.println("Введіть значення G: ");
         Scanner scant = new Scanner(System.in);
 
         G_value = scant.next();
@@ -146,9 +145,7 @@ public class Main {
 
         ST_a_c st_a_c = new ST_a_c(ER_quare, ER_intense_status, PR_square, HERN2Square, HERN2_intense_status,
                 Ki67_square, G_value);
-
         st_a_c.calculateStatus();
-
         System.out.println("Підтип люмінальний А = " + st_a_c.getStatus());
 
 
@@ -161,9 +158,7 @@ public class Main {
 
         ST_b_c st_b_c = new ST_b_c(ER_quare, ER_intense_status, PR_square, HERN2Square, HERN2_intense_status,
                 Ki67_square, G_value);
-
         st_b_c.calculateStatus();
-
         System.out.println("Підтип люмінальний B = " + st_b_c.getStatus());
 
 
@@ -172,11 +167,18 @@ public class Main {
 
 
 
+        ST_h_c st_h_c = new ST_h_c(HERN2Square, ER_quare, PR_square, G_value);
+        st_h_c.calculateStatus();
+        System.out.println("Підтип HER2/neu = " + st_h_c.getStatus());
+
+
+
+
+
+
         ST_z_c st_z_c = new ST_z_c(HERN2Square,ER_quare, PR_square, KI67_intense_status, Ki67_square, G_value);
-
         st_z_c.calculateStatus();
-
-        System.out.println("Підтип HER2/neu = " + st_z_c.getStatus());
+        System.out.println("Підтип базалбноподібний = " + st_z_c.getStatus());
 
     }
 }
